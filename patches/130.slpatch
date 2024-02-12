@@ -60,11 +60,6 @@ StageScene::control+18:
 
 // Motion
 
-// weird motion fix thingy
-005D25B0:
-    mov w0, #2
-    ret
-
 // Camera Center off while TAS is running
 003F3444:
     bl fisPadTriggerLMotion

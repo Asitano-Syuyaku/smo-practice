@@ -56,23 +56,23 @@ namespace ui {
         }
 
         struct {
-            bool teleportEnabled = false;
+            bool teleportEnabled = true;
             bool noclipEnabled = false;
-            bool shineRefresh = false;
-            bool gotShineRefresh = false;
-            bool alwaysWarp = false;
-            bool disableAutoSave = false;
+            bool shineRefresh = true;
+            bool gotShineRefresh = true;
+            bool alwaysWarp = true;
+            bool disableAutoSave = true;
             bool skipBowser = false;
             bool buttonMotionRoll = false;
             bool moonJump = false;
-            bool loadCurrentFile = false;
-            bool loadFileConfirm = false;
+            bool loadCurrentFile = true;
+            bool loadFileConfirm = true;
             bool repeatCapBounce = false;
             bool repeatRainbowSpin = false;
             bool wallJumpCapBounce = false;
             bool disableCameraVertical = false;
             bool disableCameraStop = false;
-            bool noDamageLife = false;
+            bool noDamageLife = true;
             bool lockHack = false;
             bool lockCarry = false;
             bool disableShineNumUnlock = false;
@@ -80,7 +80,7 @@ namespace ui {
 
             bool disablePuppet = false;
             bool overrideBowserHat0 = false;
-            bool reloadDUP = false;
+            bool reloadDUP = true;
             bool shouldRender = true;
             bool muteBgm = false;
 

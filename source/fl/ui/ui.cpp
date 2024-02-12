@@ -780,7 +780,6 @@ void fl::ui::PracticeUI::menu(sead::TextWriter& p)
                 BACK_PAGE(Info, 0);
                 MAX_LINE(2);
 
-                TOGGLE("Quaternion Rotation", quatRot, 1);
                 
                 if (!isInGame) {
                     printf(" Not in game!\n");
@@ -793,10 +792,6 @@ void fl::ui::PracticeUI::menu(sead::TextWriter& p)
 
                 sead::Vector3f* playerTrans = al::getTrans(player);
                 sead::Vector3f* playerVel = al::getVelocity(player);
-                sead::Quatf* playerQuat = al::getQuat(player);
-                sead::Vector3f playerEulerAngles = fl::QuatToEuler(playerQuat);
-                sead::Vector3f playerRot = sead::Vector3f(DEG(playerEulerAngles.x),DEG(playerEulerAngles.y),DEG(playerEulerAngles.z));
-                sead::Vector3f* playerRecoveryPoint = player->mRecoverPoint->getSafetyPoint();
                 const char* anim = player->mAnimator->mCurrentAnim;
                 float hSpeed = al::calcSpeedH(player), vSpeed = al::calcSpeedV(player), speed = al::calcSpeed(player);
                 float hSpeedAngle = atan2f(playerVel->z, playerVel->x);
@@ -807,16 +802,7 @@ void fl::ui::PracticeUI::menu(sead::TextWriter& p)
                 sead::Vector3f playerVelDelta = *playerVel - prevPlayerVel;
 
                 PRINT_VEC3PTR("Player Pos", playerTrans);
-                PRINT_VEC3PTR("Player Vel", playerVel);
-                PRINT_VEC3("Player Vel Delta", playerVelDelta);
-                PRINT_FLOAT("Player Vel Angle", DEG(hSpeedAngle));
-                prevPlayerVel = *playerVel;
                 PRINT_SPEED("Player Speed", hSpeed, vSpeed, speed);
-                if (quatRot)
-                    PRINT_QUATPTR("Player Rot", playerQuat);
-                else
-                    PRINT_VEC3("Player Rot", playerRot);
-                PRINT_VEC3PTR("Bubble Pos", playerRecoveryPoint);
                 printf(" Current Animation: %s (%.0f/%.0f)\n", anim, player->mAnimator->getAnimFrame() - 1.0f, player->mAnimator->getAnimFrameMax());
                 
 #if SMOVER == 100

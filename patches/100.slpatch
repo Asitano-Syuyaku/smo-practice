@@ -141,11 +141,6 @@
 //00205d4c:
 //    b shineListLayoutDecideHook
 
-// motion mod for tasing thing
-//00862f2c:
-//    mov w0, #2
-//    ret
-
 // crash on Senobi::init
 /0017e430:
 //    svc #0x26
@@ -215,11 +210,6 @@
 // seed.pchtxt
 //005203f0:
 //    ret
-
-// some fix for motion stuff
-00862f2c:
-    mov w0, #2
-    ret
 
 00509c44:
     bl tasDrawKitHook
